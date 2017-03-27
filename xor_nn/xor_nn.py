@@ -17,9 +17,9 @@ def xor_nn(XOR, THETA1, THETA2, init_w=0, learn=0, alpha=0.01):
 	for x in XOR:
 		A1 = np.vstack(([1], np.transpose(x[0:2][np.newaxis])))
 		Z2 = np.dot(THETA1, A1)
-		A2 = np.vstack(([1], sigmoid(-Z2)))
+		A2 = np.vstack(([1], sigmoid(Z2)))
 		Z3 = np.dot(THETA2, A2)
-		h = sigmoid(-Z3)
+		h = sigmoid(Z3)
 		J = J + (x[2] * math.log(h[0])) + ((1 - x[2]) * math.log(1 - h[0]));
 		m = m + 1;
 
